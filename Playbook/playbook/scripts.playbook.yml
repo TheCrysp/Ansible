@@ -1,0 +1,8 @@
+---
+- name: ansible playbook with file
+  hosts: all
+  tasks:
+    - name: Greet Nerds
+      script: /home/loki/Desktop/Ansible/Playbook/scripts/greet.sh
+
+...

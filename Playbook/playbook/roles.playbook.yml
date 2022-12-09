@@ -1,0 +1,5 @@
+---
+- name: Roles
+  hosts: website
+  roles:
+  - apache

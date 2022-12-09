@@ -1,0 +1,5 @@
+---
+- name: Copy Index File to Apache Directoy
+  copy:
+    src: files/index.html
+    dest: /var/www/html/

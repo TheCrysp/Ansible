@@ -1,0 +1,6 @@
+---
+- name: starting & stoping services
+  hosts: website
+  tasks:
+    - service: name=chronyd state=stopped
+      when: ansible_host == "node2"

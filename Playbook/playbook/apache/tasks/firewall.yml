@@ -1,0 +1,7 @@
+---
+- name: Add Firewall Rules
+  ufw:
+    rule: allow
+    port: 80
+    proto: tcp
+...

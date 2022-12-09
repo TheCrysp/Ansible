@@ -1,0 +1,41 @@
+---
+- name: Configuring Apache Web Server 
+  hosts: all
+  tasks:
+    - name: Install Apache2
+      apt:
+        name: apache2
+        state: present
+      tags:
+      - pack_tag
+
+    - name: Start Apache Service 
+      service:
+        name: apache2
+        state: started
+      tags:
+      - serv_tag
+      
+    - name: Add Firewall Rules
+      ufw:
+        rule: allow
+        port: 80
+        proto: tcp
+      tags:
+      - fire_tag
+
+    - name: Copy Index File to Apache Directoy
+      copy:
+        src: /tmp/index.html
+        dest: /var/www/html/
+      tags:
+      - copy_tag
+    
+    - name: Restart apache2
+      service:
+        name: apache2
+        state: restarted
+      tags:
+      - always
+      - restart_tag
+...

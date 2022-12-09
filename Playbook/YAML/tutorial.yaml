@@ -1,0 +1,23 @@
+# comment here
+microservice:
+  - app: user-auth
+    port: 9000
+    version: 2.1
+    deployed: true
+  - api: ai-api
+    port: 2222
+    version: [2.1, 1.2]
+    deployed: false
+
+
+api-Version: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels: 
+    app: nginx
+  
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx

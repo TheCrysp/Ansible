@@ -1,0 +1,8 @@
+---
+- name: Ping Test Playbook
+  hosts: website
+  tasks:
+    - name: Ping Hosts 
+      ping:
+
+...

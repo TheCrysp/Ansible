@@ -1,0 +1,11 @@
+---
+- name: Enable or disable SELinux
+  hosts: website
+  vars:
+    status: disabled
+  tasks:
+    - name: Change SELinux config
+      lineinfile:
+        path: /etc/selinux/config
+        regexp: "^SELINUX="
+        line: "SELINUX={{ status }}"
